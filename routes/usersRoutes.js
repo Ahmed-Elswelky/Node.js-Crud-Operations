@@ -9,7 +9,7 @@ const path = require("path");
 router.get(
   "/",
   verifyToken,
-  checkAllowedRoles("admin"),
+  checkAllowedRoles("ADMIN"),
   usersController.getUsers
 );
 

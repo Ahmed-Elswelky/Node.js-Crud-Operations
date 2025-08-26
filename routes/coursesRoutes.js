@@ -7,7 +7,7 @@ const verifyToken = require("../middlewares/verifyToken");
 
 router
   .route("/")
-  .get( verifyToken ,courseControllers.getCourses)
+  .get( courseControllers.getCourses)
   .post(
     body("title")
       .isString()

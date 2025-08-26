@@ -37,7 +37,7 @@ const login = catchAsync(async (req, res, next) => {
   }
   const userWithoutPassword = existingUser.get({ plain: true });
   delete userWithoutPassword.password;
-  const token = jwt.sign({ user: userWithoutPassword }, process.env.JWT_SECRET, { expiresIn: '1m' });
+  const token = jwt.sign({ user: userWithoutPassword }, process.env.JWT_SECRET, { expiresIn: '2h' });
   res.status(httpStatus.SUCCESS.code).json({
     status: httpStatus.SUCCESS.message,
     data: { token },
